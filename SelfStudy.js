@@ -1,8 +1,7 @@
 `use strict`;
 
-const ar = [1,2,3];
-ar.forEach((element, index) => {console.log(`${element}: ${index}`)})
-
+/*const ar = [1,2,3];
+ar.forEach((element, index) => {console.log(`${element}: ${index}`)})*/
 
 /*const obj = {
     name: 'ilia',
@@ -20,6 +19,26 @@ const userInfo = ({name, age, maried})=> {
 }
 
 userInfo(obj);
+
+
+
+const user = {
+    family: {
+        mather: 'Angela',
+        father: 'Ihor',
+    },
+    sex: 'F',
+    age: 33,
+};
+
+const {family : { mather: userMather, father : userFather}} = user;
+//const {userFamily: family} = user;
+
+const mName  = user.family?.mather;
+const {age, ...otherOserProps} = user;
+const user2 = {...user, sex: 'M'};
+
+
 
 
 const newMass = [1, 2];
@@ -217,6 +236,12 @@ myObject4.a = 'n4';
 myObject4.c.f = 4;
 console.log(myObject.a);
 console.log(myObject.c.f);
+
+
+//OR FREFER!
+
+const myObject5 = structuredClone(myObject);
+
 */
 //JSON
 /*const StringJSON = `{
@@ -243,6 +268,9 @@ const myObject2 = {
     a: true,
     b() {console.log('It is work!')}
 }
+
+
+
 
 console.log(myObject2.a);
 myObject2.b();*/
