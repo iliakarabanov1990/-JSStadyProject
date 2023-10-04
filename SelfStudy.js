@@ -1,5 +1,82 @@
 `use strict`;
 
+/*const prom = new Promise((resolve, reject) =>
+{   
+    //get data from server
+});
+
+prom
+    .then(value => {
+
+    })
+    .catch(err => {
+
+    });*/
+
+
+   /* fetch('https://jsonplaceholder.typicode.com/todos')
+    .then(response => response.json())
+    .then(json => console.log(json))
+    .catch(err => console.log(err));*/
+
+    const getFoods = (url) => new Promise((res, reg) => 
+        fetch(url)
+            .then(response => response.json())
+            .then(json => console.log(json))
+            .catch(err => console.log(err))
+    );
+
+    getFoods('https://jsonplaceholder.typicode.com/todos')
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
+
+    
+
+
+// class ProArray extends Array{
+
+//     sum(){
+//         return this.reduce((ell, s)=> s += ell, 0);
+//     }
+// }
+
+// const arr = new ProArray(1,2,3);
+
+// console.log(arr.sum());
+
+/*class newClass {
+
+    constructor(name){
+        this.fieldName = name;
+    }
+
+    getFullName(){
+        console.log(` Карабанов ${this.fieldName}`);
+    }
+
+    static getAge() {
+        console.log(`33`);    
+    }
+
+}
+
+const exm = new newClass('ilia');
+exm.getFullName();
+newClass.getAge();
+console.log(exm instanceof newClass);
+console.log(exm instanceof Object);
+console.log(exm instanceof Number);*/
+
+/*import prinNme from './index2.mjs';
+import {
+    v1 as newV1, 
+    v2
+} from './index2.mjs';
+prinNme();
+
+console.log(newV1);
+console.log(v2);*/
+
 /*const ar = [1,2,3];
 ar.forEach((element, index) => {console.log(`${element}: ${index}`)})*/
 
