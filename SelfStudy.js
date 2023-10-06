@@ -1,5 +1,53 @@
 `use strict`;
 
+/*const asyncFunc = async () => {
+//    return 'ghbdtn';
+throw new Error('this is error');
+};
+
+asyncFunc()
+.then(v => console.log(v))
+.catch(err => console.log('err: ' + err.message));*/
+
+
+/*const a = () => new Promise((resolve, reject) => setTimeout(() => resolve(), 10000));
+
+const asincA = async () => {
+
+    const startTime = performance.now();
+    console.log(startTime);
+    await a();
+    const endTime = performance.now();
+    console.log(`time of performance: ${endTime-startTime}`);
+} 
+
+asincA();*/
+
+
+
+
+const asyncA = async (httpQuery) => {
+
+ const res = await fetch(httpQuery);
+ return await res.json();
+}
+
+/*asyncA('https://jsonpceholder.typicode.com/todos')
+.then(res => console.log(res))
+.catch(err => console.log(`err: ${err}`));*/
+
+try{
+    const a = await asyncA('https://jsonplaceholder.typicode.com/todos');
+    console.log(a);
+}
+catch(err){
+
+}
+
+
+
+// asyncA('https://jsonplaceholder.typicode.com/todos');
+
 /*const prom = new Promise((resolve, reject) =>
 {   
     //get data from server
@@ -12,14 +60,14 @@ prom
     .catch(err => {
 
     });*/
-
+    
 
    /* fetch('https://jsonplaceholder.typicode.com/todos')
     .then(response => response.json())
     .then(json => console.log(json))
     .catch(err => console.log(err));*/
 
-    const getFoods = (url) => new Promise((res, reg) => 
+    /*const getFoods = (url) => new Promise((res, reg) => 
         fetch(url)
             .then(response => response.json())
             .then(json => console.log(json))
@@ -28,7 +76,7 @@ prom
 
     getFoods('https://jsonplaceholder.typicode.com/todos')
     .then(data => console.log(data))
-    .catch(err => console.log(err));
+    .catch(err => console.log(err));*/
 
     
 
