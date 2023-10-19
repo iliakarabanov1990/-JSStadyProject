@@ -40,13 +40,20 @@ const string2           = 'Welcome';
 //const string1           = 'Welcome';
 //const string2           = '';
 
-const duplicatedSymbols = findDuplicates(string1, string2);
+/*const duplicatedSymbols = findDuplicates(string1, string2);
 console.log(typeof duplicatedSymbols);
-console.log(duplicatedSymbols);
+console.log(duplicatedSymbols);*/
 
-const duplicatedSymbols2 = findDuplicates2(string1, string2);
+
+/*const duplicatedSymbols2 = findDuplicates2(string1, string2);
 console.log(typeof duplicatedSymbols2);
-console.log(duplicatedSymbols2);
+console.log(duplicatedSymbols2);*/
+
+console.log(findDuplicates3(1,2,3,6));
+
+const ff = (str) => [...str].reduce((acc, currVal) => acc = {...acc, [currVal] : acc[currVal] ?? 0 + 1}, {});
+
+console.log(ff(`Welcome`));
 
 function findDuplicates(str1, str2){     
     let result = '';
@@ -62,13 +69,16 @@ function findDuplicates(str1, str2){
 function findDuplicates2(str1, str2){     
     const lStr1 = valueToStringLowCase(str1);
     const lStr2 = valueToStringLowCase(str2);
-    return lStr1 && lStr1.split('').reduce((preVal, currVal, curInd) =>
-        preVal = (curInd === 0 ? '' : preVal) 
-                    + (lStr2.includes(currVal) && (curInd === 0 || !preVal.includes(currVal)) 
-                        ? currVal : '')
-    , 0);
+    return lStr1 && lStr1.split('').reduce((preVal, currVal, curInd) => {
+        return preVal += (lStr2.includes(currVal) && (curInd === 0 || !preVal.includes(currVal)) ? currVal : '')
+    }, '');
 }
 
 function valueToStringLowCase(val){
     return val ? String(val).toLowerCase() : '';
+}
+
+
+function findDuplicates3(...other){   
+    return other.filter(e => e%2 === 0);
 }

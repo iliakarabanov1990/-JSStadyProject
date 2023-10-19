@@ -59,6 +59,9 @@ myArray.push(NaN);
 const removedLastElement = myArray.pop();//remove last element
 myArray.unshift(null);//add in start mass
 const removedfIRSTElement = myArray.shift();//REMOVE first element
+
+const m3 = m2.concat(m1);
+
 myArray.forEach(el=>console.log(el));
 const myArray3 = myArray.map(el=> el + 'new');
 console.log(myArray3);*/
